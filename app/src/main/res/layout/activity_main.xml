@@ -18,10 +18,17 @@
         android:text="@string/ola_mundo_kotlin" />
 
     <Button
-        android:id="@+id/Btn_rollarDado"
+    android:id="@+id/Btn_rollarDado"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal"
+    android:text="@string/rolar_dado" />
+
+    <Button
+        android:id="@+id/Btn_contagem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:text="@string/rolar_dado" />
+        android:text="@string/Contagem_regressiva" />
 
 </LinearLayout>

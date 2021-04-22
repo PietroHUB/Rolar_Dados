@@ -8,21 +8,22 @@ import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         //pegando a referencia do que está no xml da tela
-
         //será uma constante pois não será alterada
-        val rolarButton: Button = findViewById(R.id.Btn_rollarDado)
+        val btnRollarDado: Button = findViewById(R.id.Btn_rollarDado)
         val txtResult: TextView = findViewById(R.id.Txt_result)
+        val btnContagem: Button = findViewById(R.id.Btn_contagem)
 
         //evento de click no button
-        rolarButton.setOnClickListener{
+        btnRollarDado.setOnClickListener{
             txtResult.text = rolarDado().toString()
         }
-
+        btnContagem.setOnClickListener{contagem()}
     }
 
     private fun rolarDado(): Int{
@@ -31,5 +32,21 @@ class MainActivity : AppCompatActivity() {
         println("========== ramdomInteiro: ${randomInteiro}")
         Toast.makeText(this, "Dado rolado!" , Toast.LENGTH_SHORT).show()
         return randomInteiro
+    }
+
+    private fun contagem(){
+        println("========== contagem: ")
+        val txtResult: TextView = findViewById(R.id.Txt_result)
+
+        if(txtResult.text == "Olá mundo Kotlin"){
+            txtResult.text = "1"
+        }else{
+            var txtResultInt = txtResult.text.toString().toInt()
+            if(txtResultInt  < 6) {
+                txtResultInt ++
+                txtResult.text = txtResultInt.toString()
+            }
+        }
+
     }
 }

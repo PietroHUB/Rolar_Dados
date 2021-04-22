@@ -2,4 +2,5 @@
     <string name="app_name">Rolar Dados</string>
     <string name="ola_mundo_kotlin"> Olá mundo Kotlin</string>
     <string name="rolar_dado">Rolar dado</string>
+    <string name="Contagem_regressiva">Contagem Manual</string>
 </resources>
