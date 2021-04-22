@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Rolar Dados</string>
+    <string name="ola_mundo_kotlin"> Olá mundo Kotlin</string>
+    <string name="rolar_dado">Rolar dado</string>
+</resources>
