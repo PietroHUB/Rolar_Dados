@@ -1,7 +1,10 @@
 package com.br.diceroller
 
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import android.view.WindowManager
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
@@ -13,11 +16,18 @@ class MainActivity : AppCompatActivity() {
     * será inicializada antes que o código chame qualquer operação nela*/
     lateinit var diceImage : ImageView
     lateinit var diceImage1 : ImageView
+    lateinit var btnLimpar : Button
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        //ocultando barras de status do android
+        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
+        actionBar?.hide()
+
+
 
         //pegando a referencia do que está no xml da tela
         //será uma constante pois não será alterada
@@ -26,15 +36,18 @@ class MainActivity : AppCompatActivity() {
         diceImage = findViewById(R.id.Img_result)
         diceImage1 = findViewById(R.id.Img_result1)
 
+        btnLimpar = findViewById(R.id.Btn_Limpar)
+
         //evento de click no button
-        btnRollarDado.setOnClickListener{
-            rolarDado()
+        btnRollarDado.setOnClickListener{rolarDado()}
+        btnLimpar.setOnClickListener{
+            limparDado()
+            Toast.makeText(this, "Dados Limpos!" , Toast.LENGTH_SHORT).show()
         }
     }
 
     private fun rolarDado(){
         println("==========Evento de click no botão rolar dados!")
-       Toast.makeText(this, "Dado rolado!" , Toast.LENGTH_SHORT).show()
         diceImage.setImageResource(getRandomDiceImage())
         diceImage1.setImageResource(getRandomDiceImage())
     }
@@ -51,5 +64,11 @@ class MainActivity : AppCompatActivity() {
         }
         println("========== drawableResource: ${drawableResource}")
         return drawableResource
+    }
+
+    private fun limparDado(){
+        println("========== limparDado: R.drawable.empty_dice")
+        diceImage.setImageResource(R.drawable.empty_dice)
+        diceImage1.setImageResource(R.drawable.empty_dice)
     }
 }
