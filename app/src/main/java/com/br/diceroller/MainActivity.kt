@@ -18,12 +18,14 @@ class MainActivity : AppCompatActivity() {
         val btnRollarDado: Button = findViewById(R.id.Btn_rollarDado)
         val txtResult: TextView = findViewById(R.id.Txt_result)
         val btnContagem: Button = findViewById(R.id.Btn_contagem)
+        val btnReiniciar: Button = findViewById(R.id.Btn_reiniciar)
 
         //evento de click no button
         btnRollarDado.setOnClickListener{
             txtResult.text = rolarDado().toString()
         }
         btnContagem.setOnClickListener{contagem()}
+        btnReiniciar.setOnClickListener{reiniciar()}
     }
 
     private fun rolarDado(): Int{
@@ -47,6 +49,11 @@ class MainActivity : AppCompatActivity() {
                 txtResult.text = txtResultInt.toString()
             }
         }
-
+    }
+    private fun reiniciar(){
+        println("========== reiniciar: ")
+        val txtResult: TextView = findViewById(R.id.Txt_result)
+        txtResult.text = "0"
+        println("========== txtResult: ${txtResult.text}")
     }
 }

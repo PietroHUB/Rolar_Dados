@@ -3,4 +3,5 @@
     <string name="ola_mundo_kotlin"> Olá mundo Kotlin</string>
     <string name="rolar_dado">Rolar dado</string>
     <string name="Contagem_regressiva">Contagem Manual</string>
+    <string name="Contagem_reiniciar">Reiniciar</string>
 </resources>
