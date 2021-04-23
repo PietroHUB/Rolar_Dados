@@ -9,13 +9,14 @@
     android:layout_gravity="center_vertical"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/Txt_result"
+    <ImageView
+        android:id="@+id/Img_result"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:textSize="30sp"
-        android:text="@string/ola_mundo_kotlin" />
+        android:src="@drawable/empty_dice"
+        tools:src="@drawable/dice_1"/>
 
     <Button
     android:id="@+id/Btn_rollarDado"
@@ -23,19 +24,5 @@
     android:layout_height="wrap_content"
     android:layout_gravity="center_horizontal"
     android:text="@string/rolar_dado" />
-
-    <Button
-        android:id="@+id/Btn_contagem"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:text="@string/Contagem_regressiva" />
-
-    <Button
-        android:id="@+id/Btn_reiniciar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:text="@string/Contagem_reiniciar" />
 
 </LinearLayout>
